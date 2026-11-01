@@ -1,0 +1,27 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  text-align: right;
+}
+
+.title {
+  max-width: 48rem;
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+.subtitle {
+  max-width: 42rem;
+  font-size: 1.125rem;
+  color: #475569;
+}
+
+@media (min-width: 768px) {
+  .title { font-size: 3.75rem; }
+  .subtitle { font-size: 1.25rem; }
+}
