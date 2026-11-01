@@ -1,37 +1,45 @@
+import Link from "next/link";
+import styles from "./RegistrationForm.module.css";
+
 export default function RegistrationForm() {
   return (
-    <div>
-      <form>
-        <table>
-          <tbody>
-            <tr>
-              <td>Enter Name:</td>
-              <td><input type="text" name="name" value="" /></td>
-            </tr> 
-            <tr>
-              <td>Surname:</td>
-              <td><input type="text" name="surname" value="" /></td>
-            </tr> 
-            <tr>
-              <td>Enter Username:</td>
-              <td><input type="text" name="username" value="" /></td>
-            </tr> 
-            <tr>
-              <td>Enter Email Address:</td>
-              <td><input type="email" name="email" value="" /></td>
-            </tr> 
-            
-            <tr>
-              <td>New Password:</td>
-              <td><input type="password" name="password" value="" /></td> {/* FIXED: type="password" */}
-            </tr>  
-            <tr>
-              <td colSpan={2}>
-                <input type="submit" value="Register Your Account" name="register_btn" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div className={styles.registrationForm}>
+      <h2 className={styles.title}>Create your account</h2>
+
+      <form className={styles.form}>
+        <div className={styles.row}>
+          <div className={styles.field}>
+            <label htmlFor="reg-name">Name</label>
+            <input type="text" id="reg-name" name="name" required />
+          </div>
+
+          <div className={styles.field}>
+            <label htmlFor="reg-surname">Surname</label>
+            <input type="text" id="reg-surname" name="surname" required />
+          </div>
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="reg-username">Username</label>
+          <input type="text" id="reg-username" name="username" required />
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" required />
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="reg-password">New Password</label>
+          <input type="password" id="reg-password" name="password" required />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="reg-confirm-password">Confirm Password</label>
+          <input type="password" id="reg-confirm-password" name="confirmPassword" required />
+        </div>
+        <button type="submit" className={styles.button}>
+          Register Your Account
+        </button>
       </form>
     </div>
   );

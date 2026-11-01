@@ -1,26 +1,31 @@
+import Link from "next/link";
+import styles from "./LoginForm.module.css";
+import ImageSlideShow from "@/components/ImageSlideShow/image-slide-show";
 export default function LoginForm() {
   return (
-    <div>
-      <form>
-        <table>
-          <tbody>
-            <tr>
-              <td>Email Address:</td>
-              <td><input type="email" name="email" value="" /></td>
-            </tr> 
-            
-            <tr>
-              <td>Password:</td>
-              <td><input type="password" name="password" value="" /></td> {/* FIXED: type="password" */}
-            </tr>
-            
-            <tr>
-              <td colSpan={2}>
-                <input type="submit" value="Login" name="login_btn" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div className={styles.loginForm}>
+      <h2 className={styles.title}>Welcome back</h2>
+      <div className={styles.slide}>
+        <ImageSlideShow />
+      </div>
+      
+
+      <form className={styles.form}>
+        <div className={styles.field}>
+          <label htmlFor="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+       <p className={styles.links}>
+        <Link href="/account/forgot-password">Forgot password?</Link>
+      </p>
+        <button type="submit" className={styles.button}>
+          Login
+        </button>
       </form>
     </div>
   );
