@@ -76,5 +76,16 @@ which contains the CSS classes used in this component.
 -  this funtion create a navigation breadcrumb based on the current path, 
 - allowing users to easily navigate back to previous pages. It splits the pathname into segments, formats them for display, and generates links for each segment except the last one, which is displayed as plain text to indicate the current page. e.g. Home>My Account
 
+## better-sqlite3 
+- lets your Next.js app store and read data in a database, all inside a single file on your computer.
 
-
+## get data from database 
+```tsx
+export function getAllRecipes() {
+  return db.prepare('SELECT * FROM recipes').all();
+}
+```
+- .all() this function retrieves all data recipes from the database and returns them as an array of objects.and for single raw use .get()
+- .run()- used when u were changing data or insert data
+## export default async function CommunityPage(){}
+- this async function because we are fetching data from the database
